@@ -6,9 +6,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-@Autonomous(name = "ShaanMecanum", group = "LinearOpMode")
+@Autonomous(name = "ShaanAutonomous", group = "LinearOpMode")
 
-public class ShaanMecanum extends LinearOpMode {
+public class ShaanAutonomous extends LinearOpMode {
     DcMotor leftMotor;
     DcMotor rightMotor;
 
