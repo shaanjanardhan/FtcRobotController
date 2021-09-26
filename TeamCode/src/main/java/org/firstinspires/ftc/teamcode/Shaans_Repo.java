@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareDevice;
@@ -8,8 +9,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-/*
-@TeleOp (name = "ShaanOpMode", group = "LinearOpMode")
+
+@Autonomous(name = "ShaanAuto", group = "Autonomous")
 
 
 public class Shaans_Repo extends LinearOpMode {
@@ -152,7 +153,10 @@ public class Shaans_Repo extends LinearOpMode {
     }
 
 
+    @Override
+    public void runOpMode() throws InterruptedException {
 
+    }
 }
 
- */
+
