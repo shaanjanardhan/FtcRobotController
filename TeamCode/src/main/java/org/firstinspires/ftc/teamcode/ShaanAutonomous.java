@@ -9,66 +9,161 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 @Autonomous(name = "ShaanAutonomous", group = "LinearOpMode")
 
 public class ShaanAutonomous extends LinearOpMode {
-    DcMotor leftMotor;
-    DcMotor rightMotor;
+    DcMotor frontRightMotor;
+    DcMotor frontLeftMotor;
+    DcMotor backRightMotor;
+    DcMotor backLeftMotor;
+    static final double wheelDiameter = 3;
+    static final double ticksPerRevolution = 537.6;
+    double circumference = Math.PI * wheelDiameter;
+    public void forward(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition((int)ticks);
+        frontLeftMotor.setTargetPosition((int)ticks);
+        backRightMotor.setTargetPosition((int)ticks);
+        backLeftMotor.setTargetPosition((int)ticks);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+
+    public void backward(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition(((int)ticks)*-1);
+        frontLeftMotor.setTargetPosition(((int)ticks)*-1);
+        backRightMotor.setTargetPosition(((int)ticks)*-1);
+        backLeftMotor.setTargetPosition(((int)ticks)*-1);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+    // if your are strafing right, the back left and front right are negative, going left means that front left and back right are negative
+    public void strafeRight(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition(((int)ticks)*-1);
+        frontLeftMotor.setTargetPosition((int)ticks);
+        backRightMotor.setTargetPosition((int)ticks);
+        backLeftMotor.setTargetPosition(((int)ticks)*-1);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+    public void strafeLeft(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition((int)ticks);
+        frontLeftMotor.setTargetPosition(((int)ticks)*-1);
+        backRightMotor.setTargetPosition(((int)ticks)*-1);
+        backLeftMotor.setTargetPosition((int)ticks);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
 
     public void runOpMode() throws InterruptedException {
-        HardwareMap hardwareMap = new HardwareMap();
-        leftMotor = hardwareMap.get(DcMotor.class, "leftMotor");
-        rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
-        leftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        leftMotor.setDirection(DcMotor.Direction.REVERSE);
+        frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
+        frontLeftMotor = hardwareMap.get(DcMotor.class, "frontLeftMotor");
+        backRightMotor = hardwareMap.get(DcMotor.class, "backRightMotor");
+        backLeftMotor = hardwareMap.get(DcMotor.class, "backLeftMotor");
         waitForStart();
-        ForwardTime(1.0,500);
+        forward(10);
+        strafeLeft(10);
+        backward(10);
+        strafeRight(10);
+
+
     }
 
     // Event (power, time(ms) )
 
 
-    // Set Power
-
-    public void leftTurn(double power) {
-        leftMotor.setPower(-1 * power);
-        rightMotor.setPower(power);
-    }
-
-    public void rightTurn(double power) {
-        leftMotor.setPower(power);
-        rightMotor.setPower(-1 * power);
-    }
-
-    public void Forward(double power) {
-        leftMotor.setPower(power);
-        rightMotor.setPower(power);
-    }
-
-    public void Backward(double power) {
-        leftMotor.setPower(power);
-        rightMotor.setPower(power);
-    }
-
-    // Set power, time
-
-    public void leftTurnTime(double power, long time) throws InterruptedException {
-        leftTurn(power);
-        Thread.sleep(time);
-    }
-
-    public void rightTurnTime(double power, long time) throws InterruptedException {
-        rightTurn(power);
-        Thread.sleep(time);
-    }
-
-    public void ForwardTime(double power, long time) throws InterruptedException {
-        Forward(power);
-        Thread.sleep(time);
-    }
-
-    public void BackwardTime(double power, long time) throws InterruptedException {
-        Backward(power);
-        Thread.sleep(time);
-    }
 
 }
 

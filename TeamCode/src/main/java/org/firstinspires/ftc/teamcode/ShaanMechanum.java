@@ -21,8 +21,12 @@ public class ShaanMechanum extends LinearOpMode{
             BackLeft.setPower(vertical + turn - horizontal);
             FrontRight.setPower(vertical + turn + horizontal);
             BackRight.setPower(vertical - turn + horizontal);
-            FrontRight.setPower(vertical - turn - horizontal);
+            FrontLeft.setPower(vertical - turn - horizontal);
         }
     }
+
+
+
+
 
 }
