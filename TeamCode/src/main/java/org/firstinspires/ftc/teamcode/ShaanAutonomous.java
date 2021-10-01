@@ -7,7 +7,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @Autonomous(name = "ShaanAutonomous", group = "LinearOpMode")
-
 public class ShaanAutonomous extends LinearOpMode {
     DcMotor frontRightMotor;
     DcMotor frontLeftMotor;
@@ -16,6 +15,7 @@ public class ShaanAutonomous extends LinearOpMode {
     static final double wheelDiameter = 3;
     static final double ticksPerRevolution = 537.6;
     double circumference = Math.PI * wheelDiameter;
+    //makes robot go forward by a certain distance(inches)
     public void forward(double distance) {
         frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -48,7 +48,7 @@ public class ShaanAutonomous extends LinearOpMode {
         backLeftMotor.setPower(0);
 
     }
-
+    //makes robot go backward by a certain distance(inches)
     public void backward(double distance) {
         frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -82,6 +82,7 @@ public class ShaanAutonomous extends LinearOpMode {
 
     }
     // if your are strafing right, the back left and front right are negative, going left means that front left and back right are negative
+    
     public void strafeRight(double distance) {
         frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
