@@ -1,5 +1,5 @@
 package org.firstinspires.ftc.teamcode;
-
+//Au†on class
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -147,6 +147,129 @@ public class ShaanAutonomous extends LinearOpMode {
         backLeftMotor.setPower(0);
 
     }
+    public void FrontRightDiagonal(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+
+        frontLeftMotor.setTargetPosition(((int)ticks));
+        backRightMotor.setTargetPosition(((int)ticks));
+
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+    public void FrontLeftDiagonal(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition((int)ticks);
+        backLeftMotor.setTargetPosition((int)ticks);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+
+    public void BackRightDiagonal(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontLeftMotor.setTargetPosition(((int)ticks)*-1);
+        backRightMotor.setTargetPosition(((int)ticks)*-1);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
+    public void BackLeftDiagonal(double distance) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        double rotations = distance/circumference;
+        double ticks = (rotations*ticksPerRevolution);
+
+        frontRightMotor.setTargetPosition((int)ticks * -1);
+        backLeftMotor.setTargetPosition((int)ticks * -1);
+
+        frontRightMotor.setPower(1);
+        frontLeftMotor.setPower(1);
+        backRightMotor.setPower(1);
+        backLeftMotor.setPower(1);
+
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        while(frontLeftMotor.isBusy() || frontRightMotor.isBusy() || backLeftMotor.isBusy() || backRightMotor.isBusy()){
+
+        }
+        frontRightMotor.setPower(0);
+        frontLeftMotor.setPower(0);
+        backRightMotor.setPower(0);
+        backLeftMotor.setPower(0);
+
+    }
 
     public void runOpMode() throws InterruptedException {
         frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
@@ -158,11 +281,15 @@ public class ShaanAutonomous extends LinearOpMode {
         strafeLeft(10);
         backward(10);
         strafeRight(10);
+        FrontLeftDiagonal(10);
+        FrontRightDiagonal(10);
+        BackRightDiagonal(10);
+        BackLeftDiagonal(10);
 
 
     }
 
-    // Event (power, time(ms) )
+
 
 
 
