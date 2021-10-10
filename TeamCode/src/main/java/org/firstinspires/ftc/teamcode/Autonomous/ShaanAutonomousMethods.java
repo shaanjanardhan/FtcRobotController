@@ -1,13 +1,11 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Autonomous;
 //Au†on class
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 
-@Autonomous(name = "ShaanAutonomous", group = "LinearOpMode")
-public class ShaanAutonomous extends LinearOpMode {
+@Autonomous(name = "ShaanAutonomousMethods", group = "LinearOpMode")
+public class ShaanAutonomousMethods extends LinearOpMode {
     DcMotor frontRightMotor;
     DcMotor frontLeftMotor;
     DcMotor backRightMotor;
@@ -271,6 +269,12 @@ public class ShaanAutonomous extends LinearOpMode {
 
     }
 
+    @Override
+    public void runOpMode() throws InterruptedException {
+
+    }
+
+/*
     public void runOpMode() throws InterruptedException {
         frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
         frontLeftMotor = hardwareMap.get(DcMotor.class, "frontLeftMotor");
@@ -289,7 +293,7 @@ public class ShaanAutonomous extends LinearOpMode {
 
     }
 
-
+*/
 
 
 
