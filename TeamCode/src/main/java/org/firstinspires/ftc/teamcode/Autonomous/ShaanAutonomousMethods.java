@@ -268,7 +268,25 @@ public class ShaanAutonomousMethods extends LinearOpMode {
         backLeftMotor.setPower(0);
 
     }
+    public void LeftTurn(double degrees) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //code
 
+    }
+    public void RightTurn(double degrees) {
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //code
+
+    }
+    public void pickup(){
+
+    }
     @Override
     public void runOpMode() throws InterruptedException {
 
