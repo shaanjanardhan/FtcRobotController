@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
-import
+
 
 @TeleOp(name = "ShaanTeleOp", group = "LinearOpMode")
 
@@ -53,8 +53,7 @@ public class ShaanTeleop extends LinearOpMode{
             frontRightMotor.setPower(0);
             Carousel.setPosition(1);
             sleep(3000);
-            LiftMotor.setPower(0);
-            intakeMotor.setPower(0);
+
 
         }
     }
@@ -63,11 +62,8 @@ public class ShaanTeleop extends LinearOpMode{
 
 
 
-            leftMotor.setPower(0);
-            rightMotor.setPower(0);
+
         }
 
 
-    }
 
-}
